@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PharmacieController">
+   <bottom>
+      <HBox prefHeight="38.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="54.0" prefWidth="284.0" text="Copyright@Pharmacie 2024" wrapText="true">
+               <HBox.margin>
+                  <Insets left="250.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../téléchargement.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="63.0" prefWidth="407.0" text="Fourmulaire d'ajout nouveau Fournisseur" textFill="#d40e0e">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="40.0" top="40.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="46.0" prefWidth="522.0">
+               <children>
+                  <Label prefHeight="39.0" prefWidth="200.0" text="Nom du fournisseur :">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField id="lbl" fx:id="nomField" stylesheets="@application.css">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="46.0" prefWidth="522.0">
+               <children>
+                  <Label prefHeight="39.0" prefWidth="133.0" text="Adresse :">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField id="lbl" fx:id="adresseField" stylesheets="@application.css">
+                     <HBox.margin>
+                        <Insets left="65.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="46.0" prefWidth="522.0">
+               <children>
+                  <Label prefHeight="39.0" prefWidth="133.0" text="Téléphone :">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField id="lbl" fx:id="telephoneField" stylesheets="@application.css">
+                     <HBox.margin>
+                        <Insets left="65.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="46.0" prefWidth="522.0">
+               <children>
+                  <Label prefHeight="39.0" prefWidth="133.0" text="Email :">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField id="lbl" fx:id="emailField" stylesheets="@application.css">
+                     <HBox.margin>
+                        <Insets left="65.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <Button fx:id="ajouterButton" mnemonicParsing="false" onAction="#handleAjouterButtonClick" prefHeight="41.0" prefWidth="117.0" text="Ajouter">
+               <VBox.margin>
+                  <Insets left="200.0" top="25.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <VBox prefHeight="23.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar prefHeight="26.0" prefWidth="184.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="Produits">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Fournisseur">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Ajout de fournisseur" />
+                        <MenuItem fx:id="Lister" mnemonicParsing="false" onAction="#goToGestion" text="Liste Fournisseur" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Finance ">
+                     <items>
+                        <MenuItem fx:id="financeMenuItem" mnemonicParsing="false" onAction="#handleFinanceButtonClick" text="F1" />
+                     </items></Menu>
+                  <Menu mnemonicParsing="false" text="A propos">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>

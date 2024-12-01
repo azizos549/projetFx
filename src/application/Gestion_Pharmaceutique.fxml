@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PharmacieController">
+   <top>
+      <VBox prefHeight="26.0" prefWidth="596.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar prefHeight="26.0" prefWidth="184.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Produits">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Fournisseur">
+                  <items>
+                    <MenuItem fx:id="Ajouter" mnemonicParsing="false" onAction="#goToAjouter" text="Ajout de fournisseur" />
+                        <MenuItem mnemonicParsing="false" text="Liste Fournisseur" />
+                  </items>
+                </Menu>
+                <Menu fx:id="financeMenuItem" mnemonicParsing="false" onAction="#handleFinanceButtonClick" text="Finance ">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleFinanceButtonClick" text="F1" />
+                     </items></Menu>
+                  <Menu mnemonicParsing="false" text="A propos">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="46.0" prefWidth="658.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="30.0" prefWidth="206.0" text="Copyright@SIP Academy 2024">
+               <HBox.margin>
+                  <Insets left="250.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox prefHeight="516.0" prefWidth="596.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="154.0" prefWidth="651.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../téléchargement.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="63.0" prefWidth="271.0" text="Liste des fournisseur" textFill="#d40e0e">
+                     <HBox.margin>
+                        <Insets left="100.0" top="50.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="312.0" prefWidth="596.0">
+               <children>
+                  <TableView fx:id="tableViewFournisseur" onSort="#afficherFournisseurs" prefHeight="350.0" prefWidth="614.0">
+                    <columns>
+                      <TableColumn fx:id="columnName" prefWidth="152.8000122308731" text="Name" />
+                      <TableColumn fx:id="columnAdresse" prefWidth="128.800048828125" text="Adresse" />
+                        <TableColumn fx:id="columnTel" prefWidth="140.800048828125" text="Telephone" />
+                        <TableColumn fx:id="columnEmail" prefWidth="171.19999389648433" text="Email" />
+                    </columns>
+                  </TableView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
